@@ -1,5 +1,5 @@
 {
   "dependencies": {
-    "jsonschema": "^1.2.4"
+    "ajv": "^6.9.1"
   }
 }

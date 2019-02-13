@@ -92,3 +92,11 @@ assertValid({
     url: 'https://blog.marvelapp.com',
     newWindow: true,
 }, require('./outcomes/openUrl.json'))
+
+
+assertValid({
+    type: 'screen',
+    id: 1,
+    height: 100,
+    width: 100,
+}, require('./objects/screen.json'))

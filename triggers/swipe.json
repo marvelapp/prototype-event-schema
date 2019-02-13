@@ -1,0 +1,91 @@
+{
+  "definitions": {},
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "$id": "http://example.com/root.json",
+  "type": "object",
+  "title": "The Root Schema",
+  "required": [
+    "type",
+    "direction",
+    "startCoords",
+    "endCoords",
+    "duration"
+  ],
+  "properties": {
+    "type": {
+      "$id": "#/properties/type",
+      "type": "string",
+      "enum": [
+        "swipe"
+      ],
+      "title": "The Type Schema",
+      "default": "",
+      "examples": [
+        "swipe"
+      ],
+      "pattern": "^(.*)$"
+    },
+    "direction": {
+      "$id": "#/properties/direction",
+      "type": "string",
+      "enum": [
+        "left",
+        "right",
+        "up",
+        "down"
+      ],
+      "title": "The Direction Schema",
+      "description": "The general direction of the swipe",
+      "examples": [
+        "left"
+      ],
+      "pattern": "^(.*)$"
+    },
+    "startCoords": {
+      "$id": "#/properties/startCoords",
+      "type": "array",
+      "title": "The Startcoords Schema",
+      "description": "The x,y coordinate of the starting position for the swipe",
+      "maxItems": 2,
+      "minItems": 2,
+      "items": {
+        "$id": "#/properties/startCoords/items",
+        "type": "integer",
+        "title": "The Items Schema",
+        "default": 0,
+        "examples": [
+          50,
+          50
+        ]
+      }
+    },
+    "endCoords": {
+      "$id": "#/properties/endCoords",
+      "type": "array",
+      "title": "The Endcoords Schema",
+      "description": "The x,y coordinate of the ending position for the swipe",
+      "default": null,
+      "maxItems": 2,
+      "minItems": 2,
+      "items": {
+        "$id": "#/properties/endCoords/items",
+        "type": "integer",
+        "title": "The Items Schema",
+        "default": 0,
+        "examples": [
+          90,
+          55
+        ]
+      }
+    },
+    "duration": {
+      "$id": "#/properties/duration",
+      "type": "integer",
+      "title": "The Duration Schema",
+      "description": "Duration of the swipe, in ms",
+      "examples": [
+        100
+      ]
+    }
+  }
+}

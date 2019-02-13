@@ -1,0 +1,67 @@
+{
+  "definitions": {},
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "$id": "http://example.com/root.json",
+  "type": "object",
+  "title": "The Root Schema",
+  "required": [
+    "type",
+    "direction",
+    "coords",
+    "duration"
+  ],
+  "properties": {
+    "type": {
+      "$id": "#/properties/type",
+      "type": "string",
+      "enum": [
+        "pinch"
+      ],
+      "title": "The Type Schema",
+      "examples": [
+        "pinch"
+      ],
+      "pattern": "^(.*)$"
+    },
+    "direction": {
+      "$id": "#/properties/direction",
+      "type": "string",
+      "enum": [
+        "in",
+        "out"
+      ],
+      "title": "The Direction Schema",
+      "description": "The direction of the pinch, either in or out",
+      "examples": [
+        "in"
+      ],
+      "pattern": "^(.*)$"
+    },
+    "coords": {
+      "$id": "#/properties/coords",
+      "type": "array",
+      "title": "The Coords Schema",
+      "maxItems": 2,
+      "minItems": 2,
+      "items": {
+        "$id": "#/properties/coords/items",
+        "type": "integer",
+        "title": "The Items Schema",
+        "default": 0,
+        "examples": [
+          50,
+          50
+        ]
+      }
+    },
+    "duration": {
+      "$id": "#/properties/duration",
+      "type": "integer",
+      "title": "The Duration Schema",
+      "description": "Duration of the pinch, in ms",
+      "examples": [
+        100
+      ]
+    }
+  }
+}

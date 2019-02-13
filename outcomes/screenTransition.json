@@ -1,0 +1,74 @@
+{
+  "definitions": {},
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "$id": "http://example.com/root.json",
+  "type": "object",
+  "title": "The Root Schema",
+  "required": [
+    "type",
+    "fromScreen",
+    "toScreen",
+    "animation"
+  ],
+  "properties": {
+    "type": {
+      "$id": "#/properties/type",
+      "type": "string",
+      "enum": [
+        "screenTransition"
+      ],
+      "title": "The Type Schema",
+      "examples": [
+        "screenTransition"
+      ],
+      "pattern": "^(.*)$"
+    },
+    "fromScreen": {
+      "$id": "#/properties/fromScreen",
+      "type": "integer",
+      "title": "The Fromscreen Schema",
+      "description": "The PK of the screen that was active when the transition begun",
+      "examples": [
+        1
+      ],
+      "minimum": 1.0
+    },
+    "toScreen": {
+      "$id": "#/properties/toScreen",
+      "type": "integer",
+      "title": "The Toscreen Schema",
+      "description": "The PK of the screen that transitioned to",
+      "examples": [
+        2
+      ],
+      "minimum": 1.0
+    },
+    "animation": {
+      "$id": "#/properties/animation",
+      "type": [
+        "string",
+        "null"
+      ],
+      "enum": [
+        "fade",
+        "push-left",
+        "push-right",
+        "slide-up",
+        "slide-down",
+        "slide-left",
+        "slide-right",
+        "pop",
+        "flip",
+        "flow",
+        "slide-fade",
+        null
+      ],
+      "title": "The Animation Schema",
+      "description": "The animation used for the transition",
+      "examples": [
+        "fade"
+      ],
+      "pattern": "^(.*)$"
+    }
+  }
+}

@@ -1,0 +1,56 @@
+{
+  "definitions": {},
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "$id": "http://example.com/root.json",
+  "type": "object",
+  "title": "The Root Schema",
+  "required": [
+    "type",
+    "screen",
+    "position"
+  ],
+  "properties": {
+    "type": {
+      "$id": "#/properties/type",
+      "type": "string",
+      "enum": [
+        "overlay"
+      ],
+      "title": "The Type Schema",
+      "examples": [
+        "overlay"
+      ],
+      "pattern": "^(.*)$"
+    },
+    "screen": {
+      "$id": "#/properties/screen",
+      "type": "integer",
+      "title": "The Screen Schema",
+      "description": "The PK of the screen that is being overlain onto the currently active screen",
+      "examples": [
+        2
+      ],
+      "minimum": 1.0
+    },
+    "position": {
+      "$id": "#/properties/position",
+      "type": "array",
+      "title": "The Position Schema",
+      "description": "The mid-point of the overlain screen",
+      "default": null,
+      "maxItems": 2,
+      "minItems": 2,
+      "items": {
+        "$id": "#/properties/position/items",
+        "type": "integer",
+        "title": "The Items Schema",
+        "default": 0,
+        "examples": [
+          50,
+          50
+        ],
+        "minimum": 0.0
+      }
+    }
+  }
+}

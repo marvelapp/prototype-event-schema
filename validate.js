@@ -19,6 +19,11 @@ assertValid({
     duration: 100,
 }, require('./triggers/tap.json'));
 
+assertValid({
+    type: 'doubletap',
+    coords: [0, 100],
+    duration: 100,
+}, require('./triggers/doubletap.json'));
 
 
 for (var direction of ['left', 'right', 'up', 'down']) {
@@ -46,7 +51,44 @@ assertValid({
 }, require('./triggers/timer.json'))
 
 
-// assertValid({
-//     type: 'hover',
-//     duration: 1250,
-// }, require('./triggers/hover.json'))
+assertValid({
+    type: 'hover',
+    duration: 1250,
+}, require('./triggers/hover.json'))
+
+
+const transitionAnimations = [
+    null,
+    'fade',
+    'push-left',
+    'push-right',
+    'slide-up',
+    'slide-down',
+    'slide-left',
+    'slide-right',
+    'pop',
+    'flip',
+    'flow',
+    'slide-fade',
+]
+for (var animation of transitionAnimations) {
+    assertValid({
+        type: 'screenTransition',
+        fromScreen: 1,
+        toScreen: 2,
+        animation: animation
+    }, require('./outcomes/screenTransition.json'))
+}
+
+assertValid({
+    type: 'overlay',
+    screen: 2,
+    position: [50, 50],
+}, require('./outcomes/overlay.json'))
+
+
+assertValid({
+    type: 'openUrl',
+    url: 'https://blog.marvelapp.com',
+    newWindow: true,
+}, require('./outcomes/openUrl.json'))

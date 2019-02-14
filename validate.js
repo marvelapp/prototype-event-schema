@@ -14,6 +14,13 @@ const assertValid = function(data, schema) {
 };
 
 assertValid({
+    trigger: {type: "tap"},
+    object: {type: "hotspot"},
+    outcome: {type: "screenTransition"},
+    timestamp: 650,
+}, require('./event.json'))
+
+assertValid({
     type: 'tap',
     coords: [0, 100],
     duration: 100,

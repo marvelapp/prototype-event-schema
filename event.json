@@ -1,0 +1,103 @@
+{
+  "definitions": {},
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "$id": "http://example.com/root.json",
+  "type": "object",
+  "title": "The Root Schema",
+  "required": [
+    "trigger",
+    "object",
+    "outcome",
+    "timestamp"
+  ],
+  "properties": {
+    "trigger": {
+      "$id": "#/properties/trigger",
+      "type": "object",
+      "title": "The Trigger Schema",
+      "description": "What caused the event to happen, such as user interaction or an elapsed timer",
+      "required": [
+        "type"
+      ],
+      "properties": {
+        "type": {
+          "$id": "#/properties/trigger/properties/type",
+          "type": "string",
+          "enum": [
+            "doubletap",
+            "tap",
+            "hover",
+            "pinch",
+            "swipe",
+            "timer"
+          ],
+          "title": "The Type Schema",
+          "examples": [
+            "tap"
+          ],
+          "pattern": "^(.*)$"
+        }
+      }
+    },
+    "object": {
+      "$id": "#/properties/object",
+      "type": "object",
+      "title": "The Object Schema",
+      "description": "The object that was used in triggering this event, such as a hotspot or a screen",
+      "default": null,
+      "required": [
+        "type"
+      ],
+      "properties": {
+        "type": {
+          "$id": "#/properties/object/properties/type",
+          "type": "string",
+          "enum": [
+            "screen",
+            "hotspot"
+          ],
+          "title": "The Type Schema",
+          "examples": [
+            "screen"
+          ],
+          "pattern": "^(.*)$"
+        }
+      }
+    },
+    "outcome": {
+      "$id": "#/properties/outcome",
+      "type": "object",
+      "title": "The Outcome Schema",
+      "description": "An action that has happened as a result of this event occuring",
+      "required": [
+        "type"
+      ],
+      "properties": {
+        "type": {
+          "$id": "#/properties/outcome/properties/type",
+          "type": "string",
+          "enum": [
+            "openUrl",
+            "overlay",
+            "screenTransition"
+          ],
+          "title": "The Type Schema",
+          "examples": [
+            ""
+          ],
+          "pattern": "^(.*)$"
+        }
+      }
+    },
+    "timestamp": {
+      "$id": "#/properties/timestamp",
+      "type": "integer",
+      "title": "The Timestamp Schema",
+      "description": "Timestamp of the event relative to the start of the prototype-viewer session, in ms",
+      "examples": [
+        650
+      ],
+      "minimum": 0.0
+    }
+  }
+}

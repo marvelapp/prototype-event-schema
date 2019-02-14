@@ -1,6 +1,6 @@
-# Event schema [![CircleCI](https://circleci.com/gh/marvelapp/prototype-event-schema.svg?style=svg&circle-token=88a10b5a479c4c27990a4ce9cf7412eb1ea28ce4)](https://circleci.com/gh/marvelapp/prototype-event-schema)
+# Proto-Viewer Event Schema [![CircleCI](https://circleci.com/gh/marvelapp/prototype-event-schema.svg?style=svg&circle-token=88a10b5a479c4c27990a4ce9cf7412eb1ea28ce4)](https://circleci.com/gh/marvelapp/prototype-event-schema)
 
-This repo defines a json schema we can use across multiple codebases to validate our prototype-viewer's event schema.
+This repo defines a set of [json-schema](https://json-schema.org/) (draft v7) files we can use across multiple codebases to validate our prototype-viewer's event schema.
 
 ## How to validate event structure
 
@@ -48,7 +48,6 @@ ProTip: [jsonschema.net](https://www.jsonschema.net/) is a useful tool for creat
 ## Things left to figure out:
 
 - how exactly should overlay positioning work?
-- do we allow non-http(s) urls to be opened from proto viewer? if so, we need to update the acceptable regex
 - how scroll is going to work? is there a difference between scroll as an outcome of a click and a scroll initiated by a user?
 - hotspot positioning how work
 - misclicks

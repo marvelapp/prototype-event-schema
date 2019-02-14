@@ -4,7 +4,7 @@ This repo defines a set of [json-schema](https://json-schema.org/) (draft v7) fi
 
 ## How to validate event structure
 
-When you receieve an event, you should first validate the entire event against the schema in `event.json`. That schema will ensure the basic event structure is correct, and that it has all required top level keys with correct `type` values if appropriate.
+When you receive an event, you should first validate the entire event against the schema in `event.json`. That schema will ensure the basic event structure is correct, and that it has all required top level keys with correct `type` values if appropriate.
 
 If that's valid, you need to take object in the `trigger` key and validate it against the schema in `triggers/:type.json`, where `:type` is the value of the trigger's `type` key. Then you should do the same for the `object` and `outcome` keys.
 

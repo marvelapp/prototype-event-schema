@@ -28,7 +28,9 @@ For example, if you have an event that looks like the following:
         "toScreen": 2,
         "animation": "fade"
     },
-    "timestamp": 2500
+    "timestamp": 2500,
+    "id": "6503601444799647744",
+    "prevId": "6503601444803842048"
 }
 ```
 

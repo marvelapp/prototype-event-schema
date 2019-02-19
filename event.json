@@ -8,6 +8,8 @@
     "trigger",
     "object",
     "outcome",
+    "id",
+    "prevId",
     "timestamp"
   ],
   "properties": {
@@ -89,6 +91,27 @@
         }
       }
     },
+    "id": {
+      "$id": "#/properties/id",
+      "type": "string",
+      "title": "The id Schema",
+      "description": "Globally unique ID for the test",
+      "examples": [
+        "5065676496486300719"
+      ]
+    },
+    "prevId": {
+      "$id": "#/properties/prevId",
+      "type": [
+        "string",
+        "null"
+      ],
+      "title": "The prevId Schema",
+      "description": "Globally unique ID of the previous event",
+      "examples": [
+        "5065676496485360659"
+      ]
+    },
     "timestamp": {
       "$id": "#/properties/timestamp",
       "type": "integer",
@@ -97,7 +120,7 @@
       "examples": [
         650
       ],
-      "minimum": 0.0
+      "minimum": 0
     }
   }
 }

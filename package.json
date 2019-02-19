@@ -1,5 +1,6 @@
 {
   "dependencies": {
-    "ajv": "^6.9.1"
+    "ajv": "^6.9.1",
+    "flakeid": "^0.3.1"
   }
 }

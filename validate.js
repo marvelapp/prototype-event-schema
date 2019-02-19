@@ -2,6 +2,9 @@ const fs = require('fs');
 const assert = require('assert');
 
 const Ajv = new require('ajv');
+const FlakeId = require('flakeid').default;
+
+const flake = new FlakeId();
 
 
 const assertValid = function(data, schema) {
@@ -18,6 +21,8 @@ assertValid({
     object: {type: "hotspot"},
     outcome: {type: "screenTransition"},
     timestamp: 650,
+    prevId: flake.gen(),
+    id: flake.gen(),
 }, require('./event.json'))
 
 assertValid({

@@ -1,0 +1,1 @@
+from marvel_proto_events import schema

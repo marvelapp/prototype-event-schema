@@ -1,20 +1,7 @@
-const fs = require('fs');
-const assert = require('assert');
-
-const Ajv = new require('ajv');
 const FlakeId = require('flakeid').default;
-
 const flake = new FlakeId();
 
-
-const assertValid = function(data, schema) {
-    const ajv = new Ajv({
-        format: 'full',
-        allErrors: true,
-    });
-    const valid = ajv.validate(schema, data);
-    assert(valid, `${data.type}: ${ajv.errorsText(ajv.errors)}`);
-};
+import { assertValid } from './assertValid'
 
 assertValid({
     trigger: {type: "tap"},

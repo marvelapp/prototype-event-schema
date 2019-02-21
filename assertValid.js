@@ -12,7 +12,7 @@ const assertValid = function(data, schema) {
 };
 
 module.exports = {
-    assertValid: assertValid,
+    assertValid,
     assertValidEvent: function(data) {
         return assertValid(data, schemaMain)
     }

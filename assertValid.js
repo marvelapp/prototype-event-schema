@@ -1,6 +1,6 @@
 const assert = require('assert');
 const Ajv = require('ajv');
-import schemaMain from './event';
+const schemaMain = require('./event');
 
 export const assertValid = function(data, schema) {
     const ajv = new Ajv({

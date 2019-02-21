@@ -1,7 +1,7 @@
 const FlakeId = require('flakeid').default;
 const flake = new FlakeId();
 
-import { assertValid } from './assertValid'
+const assertValid = require('./assertValid');
 
 assertValid({
     trigger: {type: "tap"},

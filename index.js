@@ -1,2 +1,1 @@
-import { assertValidEvent } from './assertValid';
-export { assertValidEvent };
+module.exports = { assertValidEvent: require('./assertValid').assertValidEvent };

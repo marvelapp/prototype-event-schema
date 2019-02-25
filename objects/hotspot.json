@@ -1,0 +1,35 @@
+{
+  "definitions": {},
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "$id": "http://example.com/root.json",
+  "type": "object",
+  "title": "The Root Schema",
+  "required": [
+    "type",
+    "id"
+  ],
+  "properties": {
+    "type": {
+      "$id": "#/properties/type",
+      "type": "string",
+      "enum": [
+        "hotspot"
+      ],
+      "title": "The Type Schema",
+      "examples": [
+        "hotspot"
+      ],
+      "pattern": "^(.*)$"
+    },
+    "id": {
+      "$id": "#/properties/id",
+      "type": "integer",
+      "title": "The Id Schema",
+      "examples": [
+        1
+      ],
+      "minimum": 1.0
+    }
+
+  }
+}

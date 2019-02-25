@@ -6,8 +6,7 @@
   "title": "The Root Schema",
   "required": [
     "type",
-    "coords",
-    "duration"
+    "coords"
   ],
   "properties": {
     "type": {
@@ -42,16 +41,6 @@
           100
         ]
       }
-    },
-    "duration": {
-      "$id": "#/properties/duration",
-      "type": "integer",
-      "title": "The Duration Schema",
-      "description": "Event duration in ms",
-      "default": 0,
-      "examples": [
-        100
-      ]
     }
   }
 }

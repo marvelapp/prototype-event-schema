@@ -79,6 +79,8 @@
           "$id": "#/properties/outcome/properties/type",
           "type": "string",
           "enum": [
+            "miss",
+            "navigation",
             "openUrl",
             "overlay",
             "screenTransition"

@@ -1,0 +1,38 @@
+{
+  "definitions": {},
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "$id": "http://example.com/root.json",
+  "type": "object",
+  "title": "The Root Schema",
+  "required": [
+    "type",
+    "direction"
+  ],
+  "properties": {
+    "type": {
+      "$id": "#/properties/type",
+      "type": "string",
+      "enum": [
+        "navigation"
+      ],
+      "title": "The Type Schema",
+      "examples": [
+        "navigation"
+      ],
+      "pattern": "^(.*)$"
+    },
+    "direction": {
+      "$id": "#/properties/type",
+      "type": "string",
+      "enum": [
+        "backwards"
+      ],
+      "title": "The Direction Schema",
+      "description": "The direction of the navigation",
+      "examples": [
+        "backwards"
+      ],
+      "pattern": "^(.*)$"
+    }
+  }
+}

@@ -11,9 +11,15 @@ const assertValid = function(data, schema) {
     assert(valid, `${data.type}: ${ajv.errorsText(ajv.errors)}`);
 };
 
+const assertValidEvent = function(data) {
+    assertValid(data, schemaMain);
+
+    assertValid(data.trigger, require('./triggers/' + data.trigger.type + '.json'))
+    assertValid(data.object, require('./objects/' + data.object.type + '.json'))
+    assertValid(data.outcome, require('./outcomes/' + data.outcome.type + '.json'))
+}
+
 module.exports = {
     assertValid,
-    assertValidEvent: function(data) {
-        return assertValid(data, schemaMain)
-    }
+    assertValidEvent
 };

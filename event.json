@@ -28,11 +28,12 @@
           "enum": [
             "doubletap",
             "tap",
-            "hover",
+            "mousemove",
             "pinch",
             "swipe",
             "timer",
-            "user"
+            "user",
+            "player"
           ],
           "title": "The Type Schema",
           "examples": [
@@ -58,7 +59,8 @@
           "enum": [
             "screen",
             "hotspot",
-            "overlay"
+            "overlay",
+            "player"
           ],
           "title": "The Type Schema",
           "examples": [
@@ -82,12 +84,14 @@
           "type": "string",
           "enum": [
             "miss",
-            "mouse",
-            "navigation",
             "openUrl",
-            "overlay",
             "screenTransition",
-            "scroll"
+            "overlayTransition",
+            "removeOverlay",
+            "scroll",
+            "resize",
+            "startRecording",
+            "stopRecording"
           ],
           "title": "The Type Schema",
           "examples": [

@@ -14,11 +14,11 @@
       "$id": "#/properties/type",
       "type": "string",
       "enum": [
-        "overlay"
+        "overlayTransition"
       ],
       "title": "The Type Schema",
       "examples": [
-        "overlay"
+        "overlayTransition"
       ],
       "pattern": "^(.*)$"
     },

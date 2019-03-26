@@ -6,8 +6,8 @@
   "title": "The Root Schema",
   "required": [
     "type",
-    "fromScreen",
     "toScreen",
+    "scrollPosition",
     "animation"
   ],
   "properties": {
@@ -23,16 +23,6 @@
       ],
       "pattern": "^(.*)$"
     },
-    "fromScreen": {
-      "$id": "#/properties/fromScreen",
-      "type": "integer",
-      "title": "The Fromscreen Schema",
-      "description": "The PK of the screen that was active when the transition begun",
-      "examples": [
-        1
-      ],
-      "minimum": 1.0
-    },
     "toScreen": {
       "$id": "#/properties/toScreen",
       "type": "integer",
@@ -40,6 +30,16 @@
       "description": "The PK of the screen that transitioned to",
       "examples": [
         2
+      ],
+      "minimum": 1.0
+    },
+    "scrollPosition": {
+      "$id": "#/properties/scrollPosition",
+      "type": "integer",
+      "title": "The Scroll Position Schema",
+      "default": 0,
+      "examples": [
+        100
       ],
       "minimum": 1.0
     },

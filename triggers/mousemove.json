@@ -6,19 +6,18 @@
   "title": "The Root Schema",
   "required": [
     "type",
-    "coords",
-    "smooth"
+    "coords"
   ],
   "properties": {
     "type": {
       "$id": "#/properties/type",
       "type": "string",
       "enum": [
-        "scroll"
+        "mousemove"
       ],
       "title": "The Type Schema",
       "examples": [
-        "scroll"
+        "mousemove"
       ],
       "pattern": "^(.*)$"
     },
@@ -26,7 +25,7 @@
       "$id": "#/properties/coords",
       "type": "array",
       "title": "The Coords Schema",
-      "description": "The x,y coordinates of the final scroll position",
+      "description": "The x,y coordinates of the mousemove interaction",
       "default": null,
       "maxItems": 2,
       "minItems": 2,
@@ -40,15 +39,6 @@
           100
         ]
       }
-    },
-    "smooth": {
-      "$id": "#/properties/smooth",
-      "type": "boolean",
-      "title": "The Smooth Schema",
-      "description": "Whether to scroll smoothly or not",
-      "examples": [
-        true
-      ]
     }
   }
 }

@@ -19,26 +19,6 @@
                 "player"
             ],
             "pattern": "^(.*)$"
-        },
-        "height": {
-            "$id": "#/properties/height",
-            "type": "integer",
-            "title": "The Height Schema",
-            "default": 0,
-            "examples": [
-                100
-            ],
-            "minimum": 1.0
-        },
-        "width": {
-            "$id": "#/properties/width",
-            "type": "integer",
-            "title": "The Width Schema",
-            "default": 0,
-            "examples": [
-                100
-            ],
-            "minimum": 1.0
         }
     }
 }

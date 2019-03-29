@@ -7,7 +7,8 @@
   "required": [
     "type",
     "screen",
-    "position"
+    "position",
+    "scrollPosition"
   ],
   "properties": {
     "type": {
@@ -36,7 +37,7 @@
       "$id": "#/properties/position",
       "type": "array",
       "title": "The Position Schema",
-      "description": "The mid-point of the overlain screen",
+      "description": "The top left of the overlain screen",
       "default": null,
       "maxItems": 2,
       "minItems": 2,
@@ -48,8 +49,26 @@
         "examples": [
           50,
           50
-        ],
-        "minimum": 0.0
+        ]
+      }
+    },
+    "scrollPosition": {
+      "$id": "#/properties/scrollPosition",
+      "type": "array",
+      "title": "The Scroll Position Schema",
+      "description": "The x,y coordinates of the scroll position",
+      "default": null,
+      "maxItems": 2,
+      "minItems": 2,
+      "items": {
+        "$id": "#/properties/scrollPosition/items",
+        "type": "integer",
+        "title": "The Items Schema",
+        "default": 0,
+        "examples": [
+          0,
+          100
+        ]
       }
     }
   }

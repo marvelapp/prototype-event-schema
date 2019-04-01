@@ -13,13 +13,11 @@
       "$id": "#/properties/type",
       "type": "string",
       "enum": [
-        "tap",
-        "doubletap"
+        "mousemove"
       ],
       "title": "The Type Schema",
-      "default": "",
       "examples": [
-        "tap"
+        "mousemove"
       ],
       "pattern": "^(.*)$"
     },
@@ -27,7 +25,7 @@
       "$id": "#/properties/coords",
       "type": "array",
       "title": "The Coords Schema",
-      "description": "The x,y coordinates of the tap interaction",
+      "description": "The x,y coordinates of the mousemove interaction",
       "default": null,
       "maxItems": 2,
       "minItems": 2,

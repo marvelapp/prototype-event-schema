@@ -1,73 +1,91 @@
-const fs = require('fs');
-const assert = require('assert');
-
-const Ajv = new require('ajv');
 const FlakeId = require('flakeid').default;
-
 const flake = new FlakeId();
 
+const assertValid = require('./assertValid').assertValid;
 
-const assertValid = function(data, schema) {
-    const ajv = new Ajv({
-        format: 'full',
-        allErrors: true,
-    });
-    const valid = ajv.validate(schema, data);
-    assert(valid, `${data.type}: ${ajv.errorsText(ajv.errors)}`);
-};
+assertValid(
+    {
+        trigger: { type: 'tap' },
+        object: { type: 'hotspot' },
+        outcome: { type: 'screenTransition' },
+        timestamp: 650,
+        prevId: flake.gen(),
+        id: flake.gen(),
+    },
+    require('./event.json')
+);
 
-assertValid({
-    trigger: {type: "tap"},
-    object: {type: "hotspot"},
-    outcome: {type: "screenTransition"},
-    timestamp: 650,
-    prevId: flake.gen(),
-    id: flake.gen(),
-}, require('./event.json'))
+assertValid(
+    {
+        type: 'tap',
+        coords: [0, 100],
+        duration: 100,
+    },
+    require('./triggers/tap.json')
+);
 
-assertValid({
-    type: 'tap',
-    coords: [0, 100],
-    duration: 100,
-}, require('./triggers/tap.json'));
-
-assertValid({
-    type: 'doubletap',
-    coords: [0, 100],
-    duration: 100,
-}, require('./triggers/doubletap.json'));
-
+assertValid(
+    {
+        type: 'doubletap',
+        coords: [0, 100],
+        duration: 100,
+    },
+    require('./triggers/doubletap.json')
+);
 
 for (var direction of ['left', 'right', 'up', 'down']) {
-    assertValid({
-        type: 'swipe',
-        direction: direction,
-        startCoords: [50, 50],
-        endCoords: [90, 55],
-        duration: 100,
-    }, require('./triggers/swipe.json'))
+    assertValid(
+        {
+            type: 'swipe',
+            direction: direction,
+            startCoords: [50, 50],
+            endCoords: [90, 55],
+            duration: 100,
+        },
+        require('./triggers/swipe.json')
+    );
 }
 
 for (var direction of ['in', 'out']) {
-    assertValid({
-        type: 'pinch',
-        direction: direction,
-        coords: [50, 50],
-        duration: 100,
-    }, require('./triggers/pinch.json'))
+    assertValid(
+        {
+            type: 'pinch',
+            direction: direction,
+            coords: [50, 50],
+            duration: 100,
+        },
+        require('./triggers/pinch.json')
+    );
 }
 
+assertValid(
+    {
+        type: 'timer',
+    },
+    require('./triggers/timer.json')
+);
 
-assertValid({
-    type: 'timer',
-}, require('./triggers/timer.json'))
+assertValid(
+    {
+        type: 'user',
+    },
+    require('./triggers/user.json')
+);
 
+assertValid(
+    {
+        type: 'player',
+    },
+    require('./triggers/player.json')
+);
 
-assertValid({
-    type: 'hover',
-    duration: 1250,
-}, require('./triggers/hover.json'))
-
+assertValid(
+    {
+        type: 'mousemove',
+        coords: [100, 200],
+    },
+    require('./triggers/mousemove.json')
+);
 
 const transitionAnimations = [
     null,
@@ -82,33 +100,97 @@ const transitionAnimations = [
     'flip',
     'flow',
     'slide-fade',
-]
+];
 for (var animation of transitionAnimations) {
-    assertValid({
-        type: 'screenTransition',
-        fromScreen: 1,
-        toScreen: 2,
-        animation: animation
-    }, require('./outcomes/screenTransition.json'))
+    assertValid(
+        {
+            type: 'screenTransition',
+            toScreen: 2,
+            animation: animation,
+            scrollPosition: [0, 0],
+        },
+        require('./outcomes/screenTransition.json')
+    );
 }
 
-assertValid({
-    type: 'overlay',
-    screen: 2,
-    position: [50, 50],
-}, require('./outcomes/overlay.json'))
+for (var animation of transitionAnimations) {
+    assertValid(
+        {
+            type: 'overlayTransition',
+            screen: 2,
+            animation,
+            position: [50, 50],
+            scrollPosition: [0, 0],
+        },
+        require('./outcomes/overlayTransition.json')
+    );
+}
 
+for (var animation of transitionAnimations) {
+    assertValid(
+        {
+            type: 'removeOverlay',
+            screen: 2,
+            animation,
+        },
+        require('./outcomes/removeOverlay.json')
+    );
+}
 
-assertValid({
-    type: 'openUrl',
-    url: 'https://blog.marvelapp.com',
-    newWindow: true,
-}, require('./outcomes/openUrl.json'))
+assertValid(
+    {
+        type: 'openUrl',
+        url: 'https://blog.marvelapp.com',
+        newWindow: true,
+    },
+    require('./outcomes/openUrl.json')
+);
 
+assertValid(
+    {
+        type: 'miss',
+    },
+    require('./outcomes/miss.json')
+);
 
-assertValid({
-    type: 'screen',
-    id: 1,
-    height: 100,
-    width: 100,
-}, require('./objects/screen.json'))
+assertValid(
+    {
+        type: 'resize',
+        width: 1200,
+        height: 800,
+    },
+    require('./outcomes/resize.json')
+);
+
+assertValid(
+    {
+        type: 'scroll',
+        coords: [30, 200],
+        smooth: true,
+    },
+    require('./outcomes/scroll.json')
+);
+
+assertValid(
+    {
+        type: 'startRecording',
+    },
+    require('./outcomes/startRecording.json')
+);
+
+assertValid(
+    {
+        type: 'stopRecording',
+    },
+    require('./outcomes/stopRecording.json')
+);
+
+assertValid(
+    {
+        type: 'screen',
+        id: 1,
+        height: 100,
+        width: 100,
+    },
+    require('./objects/screen.json')
+);

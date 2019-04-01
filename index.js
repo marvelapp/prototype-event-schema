@@ -1,0 +1,1 @@
+module.exports = { assertValidEvent: require('./assertValid').assertValidEvent };

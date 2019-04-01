@@ -6,30 +6,30 @@
   "title": "The Root Schema",
   "required": [
     "type",
-    "duration"
+    "id"
   ],
   "properties": {
     "type": {
       "$id": "#/properties/type",
       "type": "string",
       "enum": [
-        "hover"
+        "hotspot"
       ],
       "title": "The Type Schema",
       "examples": [
-        "hover"
+        "hotspot"
       ],
       "pattern": "^(.*)$"
     },
-    "duration": {
-      "$id": "#/properties/duration",
+    "id": {
+      "$id": "#/properties/id",
       "type": "integer",
-      "title": "The Duration Schema",
-      "default": 0,
+      "title": "The Id Schema",
       "examples": [
-        1250
+        1
       ],
-      "minimum": 0.0
+      "minimum": 1.0
     }
+
   }
 }

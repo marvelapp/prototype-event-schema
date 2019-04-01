@@ -65,6 +65,28 @@ assertValid(
     require('./triggers/timer.json')
 );
 
+assertValid(
+    {
+        type: 'user',
+    },
+    require('./triggers/user.json')
+);
+
+assertValid(
+    {
+        type: 'player',
+    },
+    require('./triggers/player.json')
+);
+
+assertValid(
+    {
+        type: 'mousemove',
+        coords: [100, 200],
+    },
+    require('./triggers/mousemove.json')
+);
+
 const transitionAnimations = [
     null,
     'fade',
@@ -91,15 +113,29 @@ for (var animation of transitionAnimations) {
     );
 }
 
-assertValid(
-    {
-        type: 'overlayTransition',
-        screen: 2,
-        position: [50, 50],
-        scrollPosition: [0, 0],
-    },
-    require('./outcomes/overlayTransition.json')
-);
+for (var animation of transitionAnimations) {
+    assertValid(
+        {
+            type: 'overlayTransition',
+            screen: 2,
+            animation,
+            position: [50, 50],
+            scrollPosition: [0, 0],
+        },
+        require('./outcomes/overlayTransition.json')
+    );
+}
+
+for (var animation of transitionAnimations) {
+    assertValid(
+        {
+            type: 'removeOverlay',
+            screen: 2,
+            animation,
+        },
+        require('./outcomes/removeOverlay.json')
+    );
+}
 
 assertValid(
     {
@@ -108,6 +144,45 @@ assertValid(
         newWindow: true,
     },
     require('./outcomes/openUrl.json')
+);
+
+assertValid(
+    {
+        type: 'miss',
+    },
+    require('./outcomes/miss.json')
+);
+
+assertValid(
+    {
+        type: 'resize',
+        width: 1200,
+        height: 800,
+    },
+    require('./outcomes/resize.json')
+);
+
+assertValid(
+    {
+        type: 'scroll',
+        coords: [30, 200],
+        smooth: true,
+    },
+    require('./outcomes/scroll.json')
+);
+
+assertValid(
+    {
+        type: 'startRecording',
+    },
+    require('./outcomes/startRecording.json')
+);
+
+assertValid(
+    {
+        type: 'stopRecording',
+    },
+    require('./outcomes/stopRecording.json')
 );
 
 assertValid(

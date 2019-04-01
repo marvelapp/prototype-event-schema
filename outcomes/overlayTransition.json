@@ -8,7 +8,8 @@
     "type",
     "screen",
     "position",
-    "scrollPosition"
+    "scrollPosition",
+    "animation"
   ],
   "properties": {
     "type": {
@@ -70,6 +71,33 @@
           100
         ]
       }
+    },
+    "animation": {
+      "$id": "#/properties/animation",
+      "type": [
+        "string",
+        "null"
+      ],
+      "enum": [
+        "fade",
+        "push-left",
+        "push-right",
+        "slide-up",
+        "slide-down",
+        "slide-left",
+        "slide-right",
+        "pop",
+        "flip",
+        "flow",
+        "slide-fade",
+        null
+      ],
+      "title": "The Animation Schema",
+      "description": "The animation used for the transition",
+      "examples": [
+        "fade"
+      ],
+      "pattern": "^(.*)$"
     }
   }
 }

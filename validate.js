@@ -65,14 +65,6 @@ assertValid(
     require('./triggers/timer.json')
 );
 
-assertValid(
-    {
-        type: 'hover',
-        duration: 1250,
-    },
-    require('./triggers/hover.json')
-);
-
 const transitionAnimations = [
     null,
     'fade',
@@ -91,9 +83,9 @@ for (var animation of transitionAnimations) {
     assertValid(
         {
             type: 'screenTransition',
-            fromScreen: 1,
             toScreen: 2,
             animation: animation,
+            scrollPosition: [0, 0],
         },
         require('./outcomes/screenTransition.json')
     );
@@ -104,6 +96,7 @@ assertValid(
         type: 'overlayTransition',
         screen: 2,
         position: [50, 50],
+        scrollPosition: [0, 0],
     },
     require('./outcomes/overlayTransition.json')
 );

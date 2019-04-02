@@ -81,6 +81,13 @@ assertValid(
 
 assertValid(
     {
+        type: 'navigation',
+    },
+    require('./triggers/navigation.json')
+);
+
+assertValid(
+    {
         type: 'mousemove',
         coords: [100, 200],
     },

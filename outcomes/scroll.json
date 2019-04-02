@@ -22,6 +22,32 @@
       ],
       "pattern": "^(.*)$"
     },
+    "screen": {
+      "$id": "#/properties/screen",
+      "type": [
+        "integer",
+        "null"
+      ],
+      "title": "The Screen Schema",
+      "description": "The PK of the screen that scrolled",
+      "examples": [
+        2
+      ],
+      "minimum": 1.0
+    },
+    "overlay": {
+      "$id": "#/properties/overlay",
+      "type": [
+        "integer",
+        "null"
+      ],
+      "title": "The Overlay Schema",
+      "description": "The PK of the overlay that scrolled",
+      "examples": [
+        2
+      ],
+      "minimum": 1.0
+    },
     "coords": {
       "$id": "#/properties/coords",
       "type": "array",

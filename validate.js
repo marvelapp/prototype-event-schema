@@ -109,39 +109,48 @@ const transitionAnimations = [
     'slide-fade',
 ];
 for (var animation of transitionAnimations) {
-    assertValid(
-        {
-            type: 'screenTransition',
-            toScreen: 2,
-            animation: animation,
-            scrollPosition: [0, 0],
-        },
-        require('./outcomes/screenTransition.json')
-    );
+    for (var reverseAnimation of [false, true]) {
+        assertValid(
+            {
+                type: 'screenTransition',
+                toScreen: 2,
+                animation,
+                reverseAnimation,
+                scrollPosition: [0, 0],
+            },
+            require('./outcomes/screenTransition.json')
+        );
+    }
 }
 
 for (var animation of transitionAnimations) {
-    assertValid(
-        {
-            type: 'overlayTransition',
-            screen: 2,
-            animation,
-            position: [50, 50],
-            scrollPosition: [0, 0],
-        },
-        require('./outcomes/overlayTransition.json')
-    );
+    for (var reverseAnimation of [false, true]) {
+        assertValid(
+            {
+                type: 'overlayTransition',
+                screen: 2,
+                animation,
+                reverseAnimation,
+                position: [50, 50],
+                scrollPosition: [0, 0],
+            },
+            require('./outcomes/overlayTransition.json')
+        );
+    }
 }
 
 for (var animation of transitionAnimations) {
-    assertValid(
-        {
-            type: 'removeOverlay',
-            screen: 2,
-            animation,
-        },
-        require('./outcomes/removeOverlay.json')
-    );
+    for (var reverseAnimation of [false, true]) {
+        assertValid(
+            {
+                type: 'removeOverlay',
+                screen: 2,
+                animation,
+                reverseAnimation,
+            },
+            require('./outcomes/removeOverlay.json')
+        );
+    }
 }
 
 assertValid(

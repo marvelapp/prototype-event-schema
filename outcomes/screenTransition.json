@@ -78,6 +78,15 @@
         "fade"
       ],
       "pattern": "^(.*)$"
+    },
+    "reverseAnimation": {
+      "$id": "#/properties/reverseAnimation",
+      "type": "boolean",
+      "title": "The Reverse Animation Schema",
+      "description": "Whether to reverse the animation or not",
+      "examples": [
+        true
+      ]
     }
   }
 }

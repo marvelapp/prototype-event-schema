@@ -1,0 +1,34 @@
+{
+  "definitions": {},
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "$id": "http://example.com/root.json",
+  "type": "object",
+  "title": "The Root Schema",
+  "required": [
+    "type",
+    "screen"
+  ],
+  "properties": {
+    "type": {
+      "$id": "#/properties/type",
+      "type": "string",
+      "enum": [
+        "goalReached"
+      ],
+      "title": "The Type Schema",
+      "examples": [
+        "goalReached"
+      ],
+      "pattern": "^(.*)$"
+    },
+    "screen": {
+      "$id": "#/properties/screen",
+      "type": "integer",
+      "title": "The Screen Schema",
+      "description": "The PK of the goal screen that has been reached",
+      "examples": [
+        1587
+      ]
+    }
+  }
+}

@@ -42,7 +42,7 @@ ProTip: [jsonschema.net](https://www.jsonschema.net/) is a useful tool for creat
 
 1. Update `event.json` to accept your new `type` value for the `trigger`, `object` or `outcome` keys as appropriate
 2. Add a schema file to the `triggers/`, `objects/` or `outcomes/` directory, with the same name as your `type` value. So a `timer` type becomes `timer.json`
-3. Add or update at least a basic test in `validation.js`
+3. Add or update at least a basic test in `validate.js`
 
 ----
 

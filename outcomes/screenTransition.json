@@ -8,7 +8,8 @@
     "type",
     "toScreen",
     "scrollPosition",
-    "animation"
+    "animation",
+    "reverseAnimation"    
   ],
   "properties": {
     "type": {

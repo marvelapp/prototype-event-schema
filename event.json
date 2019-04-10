@@ -92,7 +92,8 @@
             "scroll",
             "resize",
             "startRecording",
-            "stopRecording"
+            "stopRecording",
+            "goalReached"
           ],
           "title": "The Type Schema",
           "examples": [

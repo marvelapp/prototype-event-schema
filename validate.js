@@ -204,7 +204,6 @@ assertValid(
 assertValid(
     {
         type: 'goalReached',
-        screen: 1888,
     },
     require('./outcomes/goalReached.json')
 );

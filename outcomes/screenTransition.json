@@ -6,7 +6,7 @@
   "title": "The Root Schema",
   "required": [
     "type",
-    "toScreen",
+    "screen",
     "scrollPosition",
     "animation",
     "reverseAnimation"    
@@ -24,10 +24,10 @@
       ],
       "pattern": "^(.*)$"
     },
-    "toScreen": {
-      "$id": "#/properties/toScreen",
+    "screen": {
+      "$id": "#/properties/screen",
       "type": "integer",
-      "title": "The Toscreen Schema",
+      "title": "The Screen Schema",
       "description": "The PK of the screen that transitioned to",
       "examples": [
         2

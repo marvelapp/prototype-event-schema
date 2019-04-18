@@ -113,7 +113,7 @@ for (var animation of transitionAnimations) {
         assertValid(
             {
                 type: 'screenTransition',
-                toScreen: 2,
+                screen: 2,
                 animation,
                 reverseAnimation,
                 scrollPosition: [0, 0],

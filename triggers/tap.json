@@ -6,7 +6,9 @@
   "title": "The Root Schema",
   "required": [
     "type",
-    "coords"
+    "screenRegion",
+    "screenCoords",
+    "viewportCoords"
   ],
   "properties": {
     "type": {
@@ -23,11 +25,45 @@
       ],
       "pattern": "^(.*)$"
     },
-    "coords": {
+    "screenRegion": {
+      "$id": "#/properties/screenRegion",
+      "type": "string",
+      "enum": [
+        "header",
+        "body",
+        "footer"
+      ],
+      "title": "The Screen Region Schema",
+      "default": "",
+      "examples": [
+        "body"
+      ],
+      "pattern": "^(.*)$"
+    },
+    "screenCoords": {
       "$id": "#/properties/coords",
       "type": "array",
-      "title": "The Coords Schema",
-      "description": "The x,y coordinates of the tap interaction",
+      "title": "The Design Coords Schema",
+      "description": "The x,y coordinates, on the source design, of the tap interaction",
+      "default": null,
+      "maxItems": 2,
+      "minItems": 2,
+      "items": {
+        "$id": "#/properties/coords/items",
+        "type": "integer",
+        "title": "The Items Schema",
+        "default": 0,
+        "examples": [
+          0,
+          100
+        ]
+      }
+    },
+    "viewportCoords": {
+      "$id": "#/properties/coords",
+      "type": "array",
+      "title": "The Viewport Coords Schema",
+      "description": "The x,y viewport coordinates of the tap interaction",
       "default": null,
       "maxItems": 2,
       "minItems": 2,

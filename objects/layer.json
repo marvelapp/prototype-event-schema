@@ -1,0 +1,46 @@
+{
+    "definitions": {},
+    "$schema": "http://json-schema.org/draft-07/schema#",
+    "$id": "http://example.com/root.json",
+    "type": "object",
+    "title": "The Root Schema",
+    "required": [
+        "type",
+        "subType",
+        "id"
+    ],
+    "properties": {
+        "type": {
+            "$id": "#/properties/type",
+            "type": "string",
+            "enum": [
+                "layer"
+            ],
+            "title": "The Type Schema",
+            "examples": [
+                "layer"
+            ],
+            "pattern": "^(.*)$"
+        },
+        "id": {
+            "$id": "#/properties/id",
+            "type": "integer",
+            "title": "The Id Schema",
+            "examples": [
+                1
+            ],
+            "minimum": 1.0
+        },
+        "subType": {
+            "$id": "#/properties/subType",
+            "type": "string",
+            "enum": [
+                "scrollContainer",
+                "form",
+                "fixed"
+            ],
+            "title": "The subType Schema",
+            "examples": ["scrollContainer"]
+        }
+    }
+}

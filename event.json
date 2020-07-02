@@ -61,7 +61,8 @@
             "screen",
             "hotspot",
             "overlay",
-            "player"
+            "player",
+            "scrollContainer"
           ],
           "title": "The Type Schema",
           "examples": [

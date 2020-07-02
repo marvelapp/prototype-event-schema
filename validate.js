@@ -17,6 +17,18 @@ assertValid(
 
 assertValid(
     {
+        trigger: { type: 'user' },
+        object: { type: 'scrollContainer' },
+        outcome: { type: 'scroll' },
+        timestamp: 650,
+        prevId: flake.gen(),
+        id: flake.gen(),
+    },
+    require('./event.json')
+);
+
+assertValid(
+    {
         type: 'tap',
         coords: [0, 100],
         duration: 100,
@@ -217,3 +229,11 @@ assertValid(
     },
     require('./objects/screen.json')
 );
+
+assertValid(
+    {
+        type: 'scrollContainer',
+        id: 1,
+    },
+    require('./objects/scrollContainer.json')
+)

@@ -1,1 +1,46 @@
-tap.json
+{
+  "definitions": {},
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "$id": "http://example.com/root.json",
+  "type": "object",
+  "title": "The Root Schema",
+  "required": [
+    "type",
+    "coords"
+  ],
+  "properties": {
+    "type": {
+      "$id": "#/properties/type",
+      "type": "string",
+      "enum": [
+        "tap",
+        "doubletap"
+      ],
+      "title": "The Type Schema",
+      "default": "",
+      "examples": [
+        "tap"
+      ],
+      "pattern": "^(.*)$"
+    },
+    "coords": {
+      "$id": "#/properties/coords",
+      "type": "array",
+      "title": "The Coords Schema",
+      "description": "The x,y coordinates of the tap interaction",
+      "default": null,
+      "maxItems": 2,
+      "minItems": 2,
+      "items": {
+        "$id": "#/properties/coords/items",
+        "type": "integer",
+        "title": "The Items Schema",
+        "default": 0,
+        "examples": [
+          0,
+          100
+        ]
+      }
+    }
+  }
+}

@@ -4,5 +4,11 @@
   "dependencies": {
     "ajv": "^6.9.1",
     "flakeid": "^0.3.1"
+  },
+  "devDependencies": {
+    "prettier": "^3.0.3"
+  },
+  "prettier": {
+    "singleQuote": true
   }
 }

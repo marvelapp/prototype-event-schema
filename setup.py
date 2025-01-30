@@ -5,7 +5,7 @@ import setuptools
 
 setuptools.setup(
     name="marvel-proto-events",
-    version="0.0.1",
+    version="3.0.6",
     author="Marvel Prototyping",
     author_email="joe.alcorn@marvelapp.com",
     description="Proto events",

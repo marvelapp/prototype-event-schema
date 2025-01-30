@@ -1,2 +1,5 @@
 node_modules/
 .idea/
+/build/
+/dist/
+/marvel_proto_events.egg-info/

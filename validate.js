@@ -32,6 +32,7 @@ assertValid(
         type: 'tap',
         coords: [0, 100],
         duration: 100,
+        externalId: "123:345"
     },
     require('./triggers/tap.json')
 );
@@ -41,6 +42,7 @@ assertValid(
         type: 'doubletap',
         coords: [0, 100],
         duration: 100,
+        externalId: "123:345"
     },
     require('./triggers/doubletap.json')
 );
@@ -49,6 +51,7 @@ for (var direction of ['left', 'right', 'up', 'down']) {
     assertValid(
         {
             type: 'swipe',
+            externalId: "123:345",
             direction: direction,
             startCoords: [50, 50],
             endCoords: [90, 55],
@@ -62,6 +65,7 @@ for (var direction of ['in', 'out']) {
     assertValid(
         {
             type: 'pinch',
+            externalId: "123:345",
             direction: direction,
             coords: [50, 50],
             duration: 100,
@@ -102,6 +106,7 @@ assertValid(
     {
         type: 'mousemove',
         coords: [100, 200],
+        externalId: "123:345",
     },
     require('./triggers/mousemove.json')
 );

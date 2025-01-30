@@ -22,6 +22,16 @@
         "type"
       ],
       "properties": {
+        "externalId": {
+          "$id": "#/properties/trigger/properties/externalId",
+          "type": "string",
+          "title": "The Externalid Schema",
+          "description": "The external ID of the trigger, such as the name of a button or the ID of a Figma node that was clicked",
+          "examples": [
+            "button1",
+            "874:123"
+          ]
+        },
         "type": {
           "$id": "#/properties/trigger/properties/type",
           "type": "string",

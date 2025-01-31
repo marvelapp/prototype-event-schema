@@ -62,6 +62,25 @@
       "examples": [
         100
       ]
+    },
+    "relativeCoords": {
+      "$id": "#/properties/relative-coords",
+      "type": "array",
+      "title": "The Relative Coords Schema",
+      "description": "The x,y coordinates of the interaction, relative to the node/object that was clicked",
+      "default": null,
+      "maxItems": 2,
+      "minItems": 2,
+      "items": {
+        "$id": "#/properties/relative-coords/items",
+        "type": "integer",
+        "title": "The Items Schema",
+        "default": 0,
+        "examples": [
+          0,
+          100
+        ]
+      }
     }
   }
 }

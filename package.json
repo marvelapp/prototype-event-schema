@@ -1,6 +1,6 @@
 {
   "name": "@marvelapp/prototype-event-schema",
-  "version": "3.0.6",
+  "version": "3.0.7",
   "dependencies": {
     "ajv": "^6.9.1",
     "flakeid": "^0.3.1"

@@ -43,3 +43,13 @@ ProTip: [jsonschema.net](https://www.jsonschema.net/) is a useful tool for creat
 1. Update `event.json` to accept your new `type` value for the `trigger`, `object` or `outcome` keys as appropriate
 2. Add a schema file to the `triggers/`, `objects/` or `outcomes/` directory, with the same name as your `type` value. So a `timer` type becomes `timer.json`
 3. Add or update at least a basic test in `validate.js`
+
+## How to publish changes
+
+- Alter package.json version and increment depending on whether it is a patch, minor or major change
+- run `npm publish` to update the published npm package
+- update `setup.py` and alter the `version`
+- To publish the python package, run a git tag. `git tag v3.x.x` to the specific version you want to tag. Alter the referenced python package in requirements.txt as required. (e.g. git+https://github.com/marvelapp/prototype-event-schema.git@v3.0.7#egg=marvel-proto-events)
+
+  
+
